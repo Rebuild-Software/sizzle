@@ -4,6 +4,7 @@ import Database from "bun:sqlite";
 import { expect, test } from "bun:test";
 import { sql } from "../src/sql";
 import { sizzle } from "../src/adapters/bun";
+import { table } from "../src/table";
 
 test("basic untyped methods", () => {
   const db = new Database(":memory:");
@@ -48,5 +49,10 @@ test("type safe ideas", () => {
 
   const client = sizzle(db);
 
-  //client.insert();
+  const users = table({
+    id: "INTEGER PRIMARY KEY",
+    name: "TEXT",
+  });
+
+  client.insert(users).values({ id: "test", nagme: "test" });
 });
