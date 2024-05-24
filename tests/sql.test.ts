@@ -5,5 +5,5 @@ test("generates prepared statement correctly", () => {
   expect(sql`SELECT * FROM users WHERE id = ${100}`.query).toBe(
     `SELECT * FROM users WHERE id = $1`
   );
-  expect(sql`SELECT * FROM users WHERE id = ${100}`.values).toEqual([100]);
+  expect(sql`SELECT * FROM users WHERE id = ${100}`.params).toEqual([100]);
 });
