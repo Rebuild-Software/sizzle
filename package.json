@@ -2,6 +2,10 @@
   "name": "sizzle",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun index.ts",
+    "test": "bun test tests/*.test.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
