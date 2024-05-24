@@ -8,7 +8,6 @@ import { Statement } from "bun:sqlite";
 import { paramsToObject } from "../helpers";
 import { sql } from "../sql";
 import type { Sizzle, SizzleMethods } from "../types";
-import type { Table } from "../table";
 
 export type SizzleContext = {
   statement: Statement;
