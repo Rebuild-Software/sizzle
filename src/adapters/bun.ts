@@ -53,15 +53,15 @@ export const sizzle: Sizzle = (db) => {
               if (!returningParams) {
                 const res = db
                   .query("select * from users where name = (?)")
-                  .all(name);
-                return res[0] as typeof table;
+                  .get(name);
+                return res as typeof table;
               }
               //id example
               const col1 = Object.keys(data)[0];
               const res = db
                 .query(`select (${col1}) from users where ${col1} = ?`)
-                .all(id);
-              return res[0] as typeof table;
+                .get(id);
+              return res as typeof table;
             },
           };
         },

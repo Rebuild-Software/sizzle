@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "bun index.ts",
-    "test": "bun test tests/*.test.ts"
+    "test": "bun test tests/*.test.ts",
+    "test:bun": "bun test tests/bun.test.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
