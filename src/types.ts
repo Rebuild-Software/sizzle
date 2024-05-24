@@ -19,5 +19,9 @@ export type SizzleMethods = SizzleBaseMethods & {
 };
 
 export type SizzleInsertMethods<Table> = SizzleBaseMethods & {
-  values: (data: { [key in keyof Table]: any }) => void;
+  values: (data: { [key in keyof Table]: any }) => SizzleInsertMethods2<Table>;
+};
+
+export type SizzleInsertMethods2<Table> = {
+  returning: (data?: any) => Partial<{ [key in keyof Table]: any }>;
 };
